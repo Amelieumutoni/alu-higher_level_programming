@@ -1,2 +1,2 @@
-#!/usr/bin/python3
-python3 ./1-run_inline2.pyi
+#!/bin/bash
+python3 ./1-run_inline2.py
