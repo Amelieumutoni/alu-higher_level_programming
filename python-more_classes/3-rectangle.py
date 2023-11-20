@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-""" Creates an empty class called Rectangle
-"""
-
+import os
 
 class Rectangle:
-    """ Empty class using pass
-    """
     def __init__(self, width=0, height=0):
         if type(width) is not int:
             raise TypeError("width must be an integer")
@@ -56,5 +52,9 @@ class Rectangle:
         string = ""
         for i in range(self.__height):
             string += "#" * self.__width
-            string += '\n'
+            string += os.linesep
         return string
+
+# Example usage:
+myrectangle = Rectangle(2, 4)
+print(str(myrectangle))
