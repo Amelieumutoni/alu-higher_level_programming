@@ -2,8 +2,6 @@
 """ Defines a Rectangle class
 """
 
-import os
-
 class Rectangle:
     """ Represents a rectangle
     """
@@ -73,9 +71,20 @@ class Rectangle:
         string = ""
         for i in range(self.__height):
             string += "#" * self.__width
-            string += os.linesep
+            string += '\n'
         return string
 
 # Example usage:
 myrectangle = Rectangle(2, 4)
+print(str(myrectangle))
+print(repr(myrectangle))
+print(myrectangle)
+
+myrectangle = Rectangle(0, 4)
+print(str(myrectangle))
+
+myrectangle = Rectangle(2, 0)
+print(str(myrectangle))
+
+myrectangle = Rectangle(0, 0)
 print(str(myrectangle))
