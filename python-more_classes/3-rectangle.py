@@ -68,11 +68,7 @@ class Rectangle:
         """
         if self.__height <= 0 or self.__width <= 0:
             return ""
-        string = ""
-        for i in range(self.__height):
-            string += "#" * self.__width
-            string += '\n'
-        return string
+        return ('#' * self.__width + '\n') * self.__height
 
 # Example usage:
 myrectangle = Rectangle(2, 4)
