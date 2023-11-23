@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-def replace_in_list(my_list, idx, element):
-    if idx < 0 or idx >= len(my_list):
-        return my_list
-    my_list[idx] = element
-    return my_list
+"""Module to check if obj is an instance of specified class"""
+
+
+def is_same_class(obj, a_class):
+    """Function to check if obj is instance pf certain class"""
+    if type(obj) == a_class:
+        return True
+    return False
