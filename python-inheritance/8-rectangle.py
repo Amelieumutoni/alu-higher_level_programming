@@ -1,35 +1,29 @@
 #!/usr/bin/python3
 
-class Rectangle:
-    __nb_instances = 0
 
-    def __init__(self, width, height):
-        self._width = width
-        self._height = height
-        self.integer_validator(self._width)
-        self.integer_validator(self._height)
-        self.id = Rectangle.__nb_instances
-        Rectangle.__nb_instances += 1
+class BaseGeometry:
+    """ Creates an empty class called BaseGeometry"""
+    def __init__(self):
+        pass
 
     def area(self):
-        return self._width * self._height
+        """raise an exception
+        """
+        raise Exception("area() is not implemented")
 
-    @staticmethod
-    def integer_validator(value):
-        if not isinstance(value, int) or value <= 0:
-            raise TypeError('Value must be a positive integer')
+    def integer_validator(self, name, value):
+        """validates value
+        """
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
 
-r = Rectangle(3, 5)
 
-print(r)
-print(dir(r))
-
-try:
-    print("Rectangle: {} - {}".format(r._width, r._height))
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
-try:
-    r2 = Rectangle(4, True)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+class Rectangle(BaseGeometry):
+    """Rectangle that inherits BaseGeometry"""
+    def __init__(self, width, height):
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
+        self.__width = width
+        self.__height = height
