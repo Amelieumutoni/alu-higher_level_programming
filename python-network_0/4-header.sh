@@ -1,3 +1,9 @@
 #!/bin/bash
-# A script that takes in a URL as an argument, sends a GET request to the URL, and displays the body of the response
-curl -sH "X-HolbertonSchool-User-Id: 98" "$1"
+
+URL=$1
+
+# Make a GET request and send the request header
+response=$(curl -s -H "X-HolbertonSchool-User-Id: 98" $URL)
+
+# Print the response body
+echo $response
