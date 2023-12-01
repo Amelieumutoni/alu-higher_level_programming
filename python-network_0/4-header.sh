@@ -1,9 +1,3 @@
 #!/bin/bash
-
-URL=$1
-
-# Make a GET request and send the request header
-response=$(curl -s -H "X-HolbertonSchool-User-Id: 98" $URL)
-
-# Print the response body
-echo $response
+# Script that sends a GET request to URL and displays body of response
+curl -sH "X-School-User-Id: 98" "$1"
